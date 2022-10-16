@@ -1,0 +1,93 @@
+<form [formGroup]="pessoaForm" class="formulario-pessoa">
+
+  <br /><br />
+  <table class="fw" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="middle-width" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome">
+        </mat-form-field>
+    </td>
+  </tr>
+</table>
+<table class="middle-width" cellspacing="10">
+  <tr>
+    <td>
+      <mat-form-field class="fw" appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input type="tel" matInput placeholder="(xx) xxxxx-xxxx" formControlName="telefone" >
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="fill" class="fw">
+        <mat-label>Data de Nascimento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dataNascimento">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-radio-group aria-label="Gênero" formControlName="sexo" class="fw">
+        <mat-radio-button value="1">Feminino </mat-radio-button>
+        <mat-radio-button value="2">Masculino</mat-radio-button>
+      </mat-radio-group>
+    </td>
+  </tr>
+</table>
+
+  <table class="fw" cellspacing="10">
+    <tr>
+      <td class="wd-60">
+        <mat-form-field  class="fw" appearance="fill">
+          <mat-label>Rua</mat-label>
+          <input matInput formControlName="rua">
+        </mat-form-field>
+      </td>
+      <td class="wd-15">
+        <mat-form-field class="fw" appearance="fill">
+          <mat-label>Numero</mat-label>
+          <input matInput formControlName="numero">
+        </mat-form-field>
+      </td>
+      <td class="wd-25">
+        <mat-form-field class="fw" appearance="fill">
+          <mat-label>Complemento</mat-label>
+          <input matInput formControlName="complemento">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td class="wd-60">
+        <mat-form-field class="fw" appearance="fill">
+          <mat-label>Cidade</mat-label>
+          <input matInput formControlName="cidade">
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-form-field class="fw" appearance="fill">
+          <mat-label>Estado</mat-label>
+            <select matNativeControl formControlName="estado">
+              <option value="MG">Minas Gerais</option>
+              <option value="SP">São Paulo</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="RJ">Rio de Janeiro</option>
+            </select>
+          </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="fw" cellspacing="0">
+    <tr>
+      <td class="fw">
+        <div class="action">
+          <button mat-raised-button>Cancelar</button>
+          <button mat-raised-button color="primary">Salvar</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</form>

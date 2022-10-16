@@ -1,0 +1,6 @@
+@use '@angular/material' as mat;
+
+.menu {
+  @include mat.elevation(10, #2e2e2ea2, 5);
+  height: 35px;
+}

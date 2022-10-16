@@ -1,0 +1,35 @@
+<mat-toolbar class="header" color="primary">
+  <mat-toolbar-row>
+  <span>
+    <a routerLink="/">
+      <img class="logo" src="assets/img/logo.png" alt="logo">
+    </a>
+  </span>
+  <span class="title-group">
+    <a>
+      <i class="material-icons">
+        home
+      </i>
+      Digital Gold
+    </a>
+  </span>
+
+   <span class="user">
+      <button mat-fab color="accent" [matMenuTriggerFor]="menu" aria-label="Example icon button with a delete icon">
+        <img class="user-logged" src="assets/img/user_white.png" alt="Usuário">
+      </button>
+    <a>Usuário</a>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>edit</mat-icon>
+        <span>Editar</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>sair</span>
+      </button>
+    </mat-menu>
+  </span>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,26 @@
+  <nav class="menu" >
+    <button mat-button routerLink="/">Venda</button>
+
+    <button mat-button [matMenuTriggerFor]="troca">Troca</button>
+    <mat-menu #troca="matMenu" yPosition="below">
+      <button mat-menu-item routerLink="/troca">Atacado</button>
+      <button mat-menu-item routerLink="/troca">Varejo</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="cadastroPessoa">Cadastro Pessoa</button>
+    <mat-menu #cadastroPessoa="matMenu" xPosition="after">
+      <button mat-menu-item routerLink="/cadastroPessoa">Cadastrar Cliente</button>
+      <button mat-menu-item routerLink="/cadastroPessoa">Cadastrar Vendedor</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="cadastroProduto">Cadastro Produto</button>
+    <mat-menu #cadastroProduto="matMenu" xPosition="after">
+      <button mat-menu-item routerLink="/importarPlanilha">Importar</button>
+      <button mat-menu-item routerLink="/cadastroProduto">Cadastrar Manualmente</button>
+      <button mat-menu-item routerLink="/cadastroProduto">Editar Produto</button>
+    </mat-menu>
+
+    <button mat-button routerLink="/dashboard">Relatórios</button>
+
+  </nav>
+

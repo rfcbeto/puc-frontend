@@ -1,0 +1,47 @@
+@use '@angular/material' as mat;
+
+.header {
+  @include mat.elevation(8, #2e2e2ea2, 2);
+
+  display: flex;
+  align-items: center;
+  height: 75px;
+
+}
+
+.header a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-left: 5px;
+
+}
+
+.header .logo{
+  max-width: 45px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.header .user-logged{
+  max-width: 30px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.header .user{
+  max-width: 45px;
+
+  position: fixed;
+  right: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.header .title-group{
+  padding-left: 25px;
+  padding-right: 5px;
+}
