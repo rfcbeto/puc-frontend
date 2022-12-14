@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { PessoasService } from '../../services/pessoas.service';
+import { Pessoa } from './pessoa';
 
 
 @Component({
@@ -10,15 +12,20 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class PessoaFormComponent implements OnInit {
 
   pessoaForm: FormGroup;
+  pessoa: Pessoa;
+  newPessoa!: Pessoa;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private pessoasService: PessoasService) {
+    this.pessoa = this.pessoasService.getPessoa();
     this.pessoaForm = this.formBuilder.group({
-      nome: [],
-      sexo: [],
-      telefone: [],
-      tipo: [],
-      status: [],
-      dataNascimento: [],
+      id: this.pessoa.id,
+      nome: this.pessoa.nome,
+      cpf: this.pessoa.cpf,
+      sexo: this.pessoa.sexo,
+      telefone: this.pessoa.telefone,
+      tipo: this.pessoa.tipo,
+      status: this.pessoa.status,
+      dataNascimento: this.pessoa.dataNascimento,
       rua: [],
       cep: [],
       numero: [],
@@ -29,9 +36,12 @@ export class PessoaFormComponent implements OnInit {
       complemento: []
       //endereco: this.formBuilder.array([this.createFormGroup()])
     });
+
+
    }
 
   ngOnInit(): void {
+    this.pessoasService.setPessoa(this.newPessoa);
   }
 
   createFormGroup(){

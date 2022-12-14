@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PessoasService } from '../../services/pessoas.service';
+import { Pessoa } from '../../cadastro-pessoa/pessoa-form/pessoa';
 
 @Component({
   selector: 'app-cadastro-pessoa',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroPessoaComponent implements OnInit {
 
-  constructor() { }
+  pessoa!: Pessoa;
+  constructor(private pessoasService: PessoasService) { }
 
   ngOnInit(): void {
+    //console.log('Impressão de pessoa passada por parametro >>>>>>>>> ', this.pessoasService.getPessoa());
+    this.pessoa = this.pessoasService.getPessoa();
   }
 
 }
